@@ -1,5 +1,21 @@
+* {
+  box-sizing: transparent;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: lightgray;
+  box-sizing: border-box;
+  color: #121212;
+  background-color: #707174;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+.main {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  max-width: 980px;
+  margin: 20px auto 80px;
+  padding: 0 10px;
 }
