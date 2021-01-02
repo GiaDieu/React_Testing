@@ -28,4 +28,18 @@ describe('App Component', () => {
     const component = findByTestAttr(wrapper, 'appComponent');
     expect(component.length).toBe(1);
   });
+
+  it('Update State Hide method SHOULD update as expected ', () => {
+    const classInstance = wrapper.instance();
+    classInstance.hide();
+
+    const newState = classInstance.state.hideBtn;
+    expect(newState).toBe(true);
+  });
+
+  it('Update Count State method SHOULD update as expected', () => {
+    const classInstance = wrapper.instance();
+    const newValue = classInstance.exampleUpdate_methodValue(6);
+    expect(newValue).toEqual(7);
+  });
 });

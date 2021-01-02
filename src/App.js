@@ -19,8 +19,18 @@ const tempArray = [
 ];
 
 class App extends React.Component {
+  state = { hideBtn: false, count: 0 };
   fetch = () => {
     this.props.fetchPosts();
+    this.hide();
+  };
+
+  hide = () => {
+    this.setState({ hideBtn: !this.state.hideBtn });
+  };
+
+  exampleUpdate_methodValue = (number) => {
+    return number + 1;
   };
 
   render() {
@@ -39,7 +49,9 @@ class App extends React.Component {
             desc="Click the button the render the posts"
             tempArr={tempArray}
           />
-          <SharedButton {...configButton} />
+
+          {!this.state.hideBtn && <SharedButton {...configButton} />}
+
           {posts.length > 0 && (
             <div>
               {posts.map((post, index) => {
