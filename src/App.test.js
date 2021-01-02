@@ -29,7 +29,7 @@ describe('App Component', () => {
     expect(component.length).toBe(1);
   });
 
-  it('Update State Hide method SHOULD update as expected ', () => {
+  it('Update State Hide method SHOULD update as expected', () => {
     const classInstance = wrapper.instance();
     classInstance.hide();
 
