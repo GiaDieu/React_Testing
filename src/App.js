@@ -31,7 +31,7 @@ class App extends React.Component {
 
     const { posts } = this.props;
     return (
-      <div>
+      <div data-test="appComponent">
         <Header />
         <section className="main">
           <HeadLine
@@ -42,13 +42,15 @@ class App extends React.Component {
           <SharedButton {...configButton} />
           {posts.length > 0 && (
             <div>
-              {posts.map((post) => {
-                const { title, body, id } = post;
+              {posts.map((post, index) => {
+                const { title, body } = post;
                 const configListItem = {
                   title,
                   desc: body,
                 };
-                return <ListItem key={id} {...configListItem} />;
+                return (
+                  <ListItem key={`${post.id}${title}`} {...configListItem} />
+                );
               })}
             </div>
           )}
