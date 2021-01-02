@@ -40,6 +40,6 @@ describe('App Component', () => {
   it('Update Count State method SHOULD update as expected', () => {
     const classInstance = wrapper.instance();
     const newValue = classInstance.exampleUpdate_methodValue(6);
-    expect(newValue).toEqual(6);
+    expect(newValue).toEqual(7);
   });
 });
